@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/*Tattoo Common CSS*/
+
+body {
+	background-color: rgb(25, 25, 25);
+}
+
+section {
+	margin: auto;
+	padding: 50px;
+	width: 400px;
+	background-color: rgb(75, 75, 75);
+}
+
+div, header, nav {
+	display: block;
+	padding-bottom: 25px;
+}
+
+h1, h2, p {
+	text-align: center;
+}
+
+img {
+	display: block;
+	margin: 0px 50px;
+}
+
+ul {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+li {
+	float: left;
+}
+
+a{
+	display:block;
+	padding: 10px 30px;
+}
+
+nav li a:hover {
+	background: rgb(50, 50, 50);
+	border-radius:10px;
+}
+
+nav a:visited {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+
+nav a:link {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+
+div#artistList li {
+	display: block;
+	padding: 10px 14px;
+}
