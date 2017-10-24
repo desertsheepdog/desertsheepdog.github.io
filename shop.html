@@ -17,37 +17,61 @@
 		
 	</head>
 	
-	<body onload="alert('The tattoo supply online store will be open soon!');"><!-- This creates an alert for the user once the webpage loads -->
+	<body>
 	
 		<section id="sectionMain">
 		
 			<header>
 				<img src="images/logo.png" alt="logo" />
-				<script>
-					document.write("<h1>Tattoo Shop Name Here</h1>");//writes header to webpage
-				</script>
+				<h1 id="tattooShopName"></h1><!--h1 is intentionally left blank to have text inserted with common.js file-->
 			</header>
 			
-			<nav id="navigationMain">
-				<script>//writes  an unordered list and webpage links for the main navigation bar
-				document.write("<ul>");
-					document.write("<li><a href='index.html'>Home</a></li>");
-					document.write("<li><a href='about.html'>About</a></li>");
-					document.write("<li><a href='artists.html'>Artists</a></li>");
-					document.write("<li><a href='shop.html'>Shop</a></li>");
-				document.write("</ul>");
-				</script>
+			<nav>
+				<ul><!--writes  an unordered list with ids for editing in common.js file for the main navigation bar-->
+					<li id="page1"></li>
+					<li id="page2"></li>
+					<li id="page3"></li>
+					<li id="page4"></li>
+				</ul>
 			</nav>
 			
-			<div id="containerMain">
-				<script> 
-					document.write("<h2>Tattoo Supplies</h2>");//writes header to webpage
-					document.write("<p>Coming Soon!</p>");//writes paragraph text to webpage
-				</script>
-			</div>
+			<form>
+				<fieldset>
+					<legend>Tattoo Supplies</legend>
+					<input type="number" id="itemOne" />
+					<label for="itemOne">Assorted Needles (Round)</label>
+					<input type="number" id="itemTwo" />
+					<label for="itemTwo">Assorted Needles (Magnum)</label>
+					<input type="number" id="itemThree" />
+					<label for="itemThree">Assorted Tubes (Round)</label>
+					<input type="number" id="itemFour" />
+					<label for="itemFour">Assorted Tubes (Magnum)</label>
+					<input type="number" id="itemFive" />
+					<label for="itemFive">Rubber Bands (100 pcs.)</label>
+					<input type="number" id="itemSix" />
+					<label for="itemSix">Armature Bar Grommets (100 pcs.)</label>
+					<input type="number" id="itemSeven" />
+					<label for="itemSeven">Nitrile Gloves (Powder Free)</label>
+				</fieldset>
+				<fieldset>
+					<legend>Shipping</legend>
+					<input type="checkbox" id="shippingOne" />
+					<label for="shippingOne">Standard Shipping</label>
+					<input type="checkbox" id="shippingTwo" />
+					<label for="shippingTwo">Priority Shipping</label>
+					<input type="checkbox" id="shippingThree" />
+					<label for="shippingThree">Next Day Shipping</label>
+				</fieldset>
+				<input type="submit" id="submit" value="order" onclick="alert('Thank you for your order!')">
+				<div id="total">
+					<h3>Total</h3>
+					<p id="grandTotal"></p>
+				</div>
+			</form>
 			
 		</section>
-		
+		<script src="shop.js"></script>
+		<script src="common.js"></script>
 	</body>
 	
 </html>

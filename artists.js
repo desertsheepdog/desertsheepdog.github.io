@@ -1,9 +1,8 @@
 /*
-	CIS166AA: Tattoo JavaScript
+	CIS166AA: Artists JavaScript
 	Author: David Goodyke
 	Date: 10/19/2017
 */
-
 /*
 	The below variables are declared and defined for each 
 	image referencing their location to be used with the 
@@ -20,7 +19,7 @@ var artistImage4 = "images/artistfour.png";
 	as the employment of different artists change.
 */
 
-var artist1 = "Artist One"
-var artist2 = "Artist Two"
-var artist3 = "Artist Three"
-var artist4 = "Artist Four"
+var artist1 = "Artist One";
+var artist2 = "Artist Two";
+var artist3 = "Artist Three";
+var artist4 = "Artist Four";

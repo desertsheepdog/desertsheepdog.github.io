@@ -23,20 +23,16 @@
 		
 			<header>
 				<img src="images/logo.png" alt="logo" />
-				<script>
-					document.write("<h1>Tattoo Shop Name Here</h1>");//writes header to webpage
-				</script>
+				<h1 id="tattooShopName"></h1><!--h1 is intentionally left blank to have text inserted with common.js file-->
 			</header>
 			
-			<nav id="navigationMain">
-				<script>//writes  an unordered list and webpage links for the main navigation bar
-				document.write("<ul>");
-					document.write("<li><a href='index.html'>Home</a></li>");
-					document.write("<li><a href='about.html'>About</a></li>");
-					document.write("<li><a href='artists.html'>Artists</a></li>");
-					document.write("<li><a href='shop.html'>Shop</a></li>");
-				document.write("</ul>");
-				</script>
+			<nav>
+				<ul><!--writes  an unordered list with ids for editing in common.js file for the main navigation bar-->
+					<li id="page1"></li>
+					<li id="page2"></li>
+					<li id="page3"></li>
+					<li id="page4"></li>
+				</ul>
 			</nav>
 			
 			<div id="containerMain">
@@ -59,7 +55,7 @@
 			</div>
 			
 		</section>
-		
+		<script src="common.js"></script>
 	</body>
 	
 </html>

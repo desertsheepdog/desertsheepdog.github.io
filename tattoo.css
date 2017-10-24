@@ -7,9 +7,10 @@ body {
 }
 
 section {
+	display: table;
 	margin: auto;
 	padding: 50px;
-	width: 400px;
+	width: 600px;
 	background-color: rgb(75, 75, 75);
 }
 
@@ -24,23 +25,28 @@ h1, h2, p {
 
 img {
 	display: block;
-	margin: 0px 50px;
+	margin: 0px auto;
 }
 
-ul {
-	display: inline-block;
-	margin: 0px;
-	padding: 0px;
-	list-style-type: none;
+nav {
+	margin: 0 0 40px 0;
+	padding: 0;
+	text-align: center;
+	list-style: none;
 }
 
-li {
-	float: left;
+nav ul {
+	margin: 0;
+	padding: 0;
 }
 
-a{
-	display:block;
-	padding: 10px 30px;
+nav li {
+	display: inline;
+}
+
+nav a{
+	display:inline-block;
+	padding: 10px 50px;
 }
 
 nav li a:hover {
@@ -58,7 +64,54 @@ nav a:link {
 	text-decoration: none;
 }
 
+div#artistList {
+	display: block;
+	float: left;
+}
+
 div#artistList li {
 	display: block;
-	padding: 10px 14px;
+	padding: 22px 10px;
+}
+
+div#artistImage {
+	display: block;
+}
+
+form legend {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+form input {
+	float: right;
+	clear: both;
+	border: none;
+	height: 20px;
+	width: 40px;
+	margin: 5px 0 5px 40px;
+	background-color: rgb(125, 125, 125);
+}
+
+form label {
+	float: right;
+	margin: 5px 0;
+}
+
+div#total {
+	display: block;
+	text-align: center;
+	float: right;
+}
+
+div#total h3, p{
+	display: inline;
+	clear:both;
+	padding: 20px;
+}
+
+input#submit {
+	float: left;
+	display: block;
 }
