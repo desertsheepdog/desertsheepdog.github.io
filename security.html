@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--
+			CIS166AA: Tattoo Home
+			Author: David Goodyke
+			Date: 11/21/2017
+		-->
+		<title>Tattoo</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		
+		<link href="css/tattoo.css" rel="stylesheet"  />
+		
+		<script src="jsmin/modernizr.custom.05819.js"></script>
+		
+	</head>
+	
+	<body>
+		<section id="sectionMain">
+			<header>
+				<img src="images/logo.png" alt="logo" />
+				<h1 id="tattooShopName"></h1><!--h1 is intentionally left blank to have text inserted with common.js file-->
+			</header>
+			
+			<nav>
+				<ul><!--writes  an unordered list with ids for editing in common.js file for the main navigation bar-->
+					<li id="page1"></li>
+					<li id="page2"></li>
+					<li id="page3"></li>
+					<li id="page4"></li>
+				</ul>
+			</nav>
+			
+			<h2>Web Security</h2>
+			
+			<section id="navigation">
+				<p id="navText">This map displays your current location</p>
+				<div id="map"></div>
+				<div id="location"></div>
+			</section>
+			
+			<div id="containerMain">
+				<div id="userInfo">
+				<h3>This is your browser and display information:</h3>
+				</div>
+				<div id="safetyInfo">
+				<h3>Below are a few links regarding safe web navigation.</h3>
+				</div>
+			</div>
+		</section>
+		
+		<script>
+			"use strict"
+		
+			//global variables
+			var waitForUser;
+			var currentLatitude;
+			var currentLongitude;
+			var currentElevation;
+			
+			function loadMap() {
+				if(typeof google!== 'object') {
+				var script = document.createElement("script");
+				script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&key=AIzaSyAlKSmy6vnG54Ic_GDkx8ZtJYXVWdOKljw&callback=geoTest";
+				document.body.appendChild(script);
+				}
+			}
+			
+			function geoTest() {
+				waitForUser = setTimeout(fail, 10000);
+				if(navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(createDirections, fail, {timeout: 10000});
+				} else {
+					fail();
+				}
+			}
+			
+			function createDirections(position) {
+				clearTimeout(waitForUser);
+				currentLatitude = position.coords.latitude;
+				currentLongitude = position.coords.longitude;
+				currentElevation = position.coords.altitude;
+				console.log("Latitude: " + currentLatitude);
+				console.log("Longitude: " + currentLongitude);
+				console.log("Elevation: " + currentElevation);
+				var mapOptions = {
+					center: new google.maps.LatLng(currentLatitude, currentLongitude),
+					zoom: 15
+				};
+				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+				currentLatitude = Math.round(1e6 * currentLatitude) / 1e6;
+				currentLongitude = Math.round(1e6 * currentLongitude) / 1e6;
+				//currentLatitude = currentLatitude.toFixed(6);
+				var displayLocation = document.getElementById("location");
+				var displayLatitude = document.createElement("p");
+				displayLatitude.innerHTML = "Latitude: " + currentLatitude;
+				var displayLongitude = document.createElement("p");
+				displayLongitude.innerHTML = "Longitude: " + currentLongitude;
+				var displayElevation = document.createElement("p");
+				if(currentElevation === null){
+					currentElevation = "Unable to acquire altitude";
+				}
+				displayElevation.innerHTML = "Elevation: " + currentElevation;
+				displayLocation.appendChild(displayLatitude);
+				displayLocation.appendChild(displayLongitude);
+				displayLocation.appendChild(displayElevation);
+			}
+			
+			function fail() {
+				console.log("Geolocation information not available or not authorized.");
+				document.getElementById("navText").innerHTML = "Unable to access your current location.";
+				document.getElementById("map").style.display = "none";
+				document.getElementById("location").style.display = "none";
+			}
+			
+			if (window.addEventListener) {
+				window.addEventListener("load", loadMap, false); 
+			} else if (window.attachEvent)  {
+				window.attachEvent("onload", loadMap);
+			}
+			
+		</script>
+		<script src="jsmin/security.min.js"></script>
+		<script src="jsmin/common.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--
+			CIS166AA: Tattoo About
+			Author: David Goodyke
+			Date: 10/19/2017
+		-->
+		<title>Tattoo</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		
+		<link href="css/tattoo.css" rel="stylesheet"  />
+		
+		<script src="jsmin/modernizr.custom.05819.js"></script>
+		
+	</head>
+	
+	<body>
+	
+		<section id="sectionMain">
+		
+			<header>
+				<img src="images/logo.png" alt="logo" />
+				<h1 id="tattooShopName"></h1><!--h1 is intentionally left blank to have text inserted with common.js file-->
+			</header>
+			
+			<nav>
+				<ul><!--writes  an unordered list with ids for editing in common.js file for the main navigation bar-->
+					<li id="page1"></li>
+					<li id="page2"></li>
+					<li id="page3"></li>
+					<li id="page4"></li>
+				</ul>
+			</nav>
+			
+			<div id="containerMain">
+				<h2>Book an Appointment Online!</h2>
+				<div id="apptResults">
+					<p id="apptName"></p>
+					<p id="apptBookedFor"></p>
+					<p id="apptBookedOn"></p>
+					<p id="apptCount"></p>
+					<p id="apptText"></p>
+				</div>
+				<div id="elapsedResults"></div>
+				<form id="apptForm">
+					<h3>Appointment Form</h3>
+					<input type="text" id="firstName" />
+					<label for="firstName">First Name</label>
+					<input type="text" id="lastName" />
+					<label for="lastName">Last Name</label>
+					<input type="text" id="apptDate" placeholder="mm/dd/yyyy" />
+					<label for="apptDate">Appointment Date</label>
+					<input type="button" value="Book" id="apptButton" />
+				</form>
+				<form id="elapsedTime">
+					<h3>Elapsed Time Counter</h3>
+					<img src="images/calendarIcon.png" alt="calendar" id="calendarButton" />
+					<input type="text" id="pastDate" placeholder="mm/dd/yyyy" />
+					<label for="pastDate">Enter a date in the past</label>
+					<input type="button" value="Set" id="elapsedButton" />
+				</form>
+				<div id="calendar">
+					<div id="prev">&larr;</div>
+					<div id="next">&rarr;</div>
+					<table>
+						<caption></caption>
+						<tr>
+							<th>Sun</th>
+							<th>Mon</th>
+							<th>Tue</th>
+							<th>Wed</th>
+							<th>Thu</th>
+							<th>Fri</th>
+							<th>Sat</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+					<p id="close">close</p>
+				</div>
+			</div>
+			
+		</section>
+		
+		<script src="jsmin/appointments.min.js"></script>
+		<script src="jsmin/common.min.js"></script>
+	</body>
+	
+</html>

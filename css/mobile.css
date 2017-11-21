@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/*
+	CIS166AA: Mobile CSS
+	Author: David Goodyke
+	Date: 11/5/2017
+*/
+
+body {
+	background-color: rgb(75, 75, 75);
+	max-width: 600px;
+}
+
+section {
+	display: table;
+	margin: 0;
+	width: 100%;
+	background-color: rgba(0, 0,0, 0);
+}
+
+div, header, nav {
+	display: block;
+	padding-bottom: 25px;
+}
+
+h1, h2, p {
+	text-align: center;
+	display: block;
+}
+
+img {
+	display: block;
+	margin: 0px auto;
+	width: 100%
+}
+
+nav {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	list-style: none;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	margin: 0;
+	padding: 0;
+}
+
+nav a{
+	display: block;
+	padding: 20px 0;
+	width: 100%
+}
+
+nav li a:hover {
+	background: rgb(50, 50, 50);
+}
+
+nav a:visited {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+
+nav a:link {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+
+a:visited {
+	color: rgb(0, 0, 0);
+	text-decoration: underline;
+}
+
+a:link {
+	color: rgb(0, 0, 0);
+	text-decoration: underline;
+}
+
+div#artistList {
+	display: block;
+	float: left;
+	width: 25%;
+}
+
+div#artistList li {
+	display: block;
+	padding: 10px 0;
+}
+
+div#artistImage  img{
+	display: block;
+
+	width: 75%;
+	max-width: 300px;
+	height: auto;
+}
+
+div#userInfo p {
+	text-align: left;
+}
+	
+div#safetyInfo p {
+	text-align: left;
+}
+
+form legend {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+form input {
+	float: right;
+	clear: both;
+	border: none;
+	height: 20px;
+	width: 40px;
+	margin: 5px 0 5px 40px;
+	background-color: rgb(125, 125, 125);
+}
+fieldset#shipInfo {
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+
+input#firstName, input#lastName, input#street, input#city {
+	width: 180px;
+}
+
+input#number, input#apt, input#zip {
+	width: 80px;
+}
+
+select#state {
+	float: right;
+	clear: both;
+	border: none;
+	height: 20px;
+	width: 40px;
+	margin: 5px 0 5px 40px;
+	background-color: rgb(125, 125, 125);
+}
+
+form label {
+	float: right;
+	margin: 5px 0;
+}
+
+fieldset#shipInfo label {
+	float: left;
+	margin: 5px 0;
+}
+
+div#totalSubmit {
+	display: inline-block;
+	float: right;
+	clear: none;
+	width: 200px;
+	margin: 100px 0 0 0;
+	text-align: right;
+}
+
+div#messageBox {
+	display: inline-block;
+	float: right;
+	clear: none;
+	text-align: center;
+	color: red;
+}
+
+input#submit {
+	display: block;
+	width: 100px;
+}

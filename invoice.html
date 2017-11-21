@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--
+			CIS166AA: Tattoo Shop
+			Author: David Goodyke
+			Date: 10/8/2017
+		-->
+		<title>Invoice</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		
+		<link href="css/tattoo.css" rel="stylesheet"  />
+		
+		<script src="jsmin/modernizr.custom.05819.js"></script>
+		
+	</head>
+	
+	<body>
+	
+		<section id="sectionMain">
+		
+			<header>
+				<img src="images/logo.png" alt="logo" />
+				<h1 id="tattooShopName"></h1><!--h1 is intentionally left blank to have text inserted with common.js file-->
+			</header>
+			
+			<nav>
+				<ul><!--writes  an unordered list with ids for editing in common.js file for the main navigation bar-->
+					<li id="page1"></li>
+					<li id="page2"></li>
+					<li id="page3"></li>
+					<li id="page4"></li>
+				</ul>
+			</nav>
+			<div>
+			<p>Here is your invoice.</p>
+			<script>
+             var formData = location.search;
+             formData = formData.substring(1, formData.length);
+             while (formData.indexOf("+") !== -1) {
+                formData = formData.replace("+", " ");
+             }
+             formData = decodeURIComponent(formData);
+             var formArray = formData.split("&");
+             for (var i = 0; i < formArray.length; i = i + 1) {
+                document.write("<p>" + formArray[i] + "</p>");
+             }
+         </script>
+		</div>
+		</section>
+
+		<script src="jsmin/common.min.js"></script>
+		
+	</body>
+	
+</html>
