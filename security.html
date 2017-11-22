@@ -96,6 +96,8 @@
 						if (results[0]) {
 							currentElevation = results[0].elevation;
 							console.log("Elevation: " + currentElevation);
+							var displayElevation = document.createElement("p");
+							displayElevation.innerHTML = "Elevation: " + currentElevation + " meters";
 						} else {
 							currentElevation = "Unable to acquire altitude";
 						}
@@ -112,8 +114,8 @@
 				displayLatitude.innerHTML = "Latitude: " + currentLatitude;
 				var displayLongitude = document.createElement("p");
 				displayLongitude.innerHTML = "Longitude: " + currentLongitude;
-				var displayElevation = document.createElement("p");
-				displayElevation.innerHTML = "Elevation: " + currentElevation + " meters";
+				//var displayElevation = document.createElement("p");
+				//displayElevation.innerHTML = "Elevation: " + currentElevation + " meters";
 				displayLocation.appendChild(displayLatitude);
 				displayLocation.appendChild(displayLongitude);
 				displayLocation.appendChild(displayElevation);
