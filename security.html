@@ -98,6 +98,7 @@
 							console.log("Elevation: " + currentElevation);
 							var displayElevation = document.createElement("p");
 							displayElevation.innerHTML = "Elevation: " + currentElevation + " meters";
+							displayLocation.appendChild(displayElevation);
 						} else {
 							currentElevation = "Unable to acquire altitude";
 						}
