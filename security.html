@@ -90,7 +90,7 @@
 					zoom: 15
 				};
 				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-				var positionRequest = {'coordinates':[currentLatitude, currentLongitude]};
+				var positionRequest = {'locations':[currentLatitude, currentLongitude]};
 				var elevator = new google.maps.ElevationService();
 				elevator.getElevationForLocations(positionRequest, function (results, status) {
 					if(status == google.maps.ElevationStatus.OK) {
