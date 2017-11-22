@@ -88,6 +88,15 @@
 					zoom: 15
 				};
 				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+				currentLatitude = Math.round(1e6 * currentLatitude) / 1e6;
+				currentLongitude = Math.round(1e6 * currentLongitude) / 1e6;
+				var displayLocation = document.getElementById("location");
+				var displayLatitude = document.createElement("p");
+				displayLatitude.innerHTML = "Latitude: " + currentLatitude;
+				var displayLongitude = document.createElement("p");
+				displayLongitude.innerHTML = "Longitude: " + currentLongitude;
+				displayLocation.appendChild(displayLatitude);
+				displayLocation.appendChild(displayLongitude);
 				var elevator = new google.maps.ElevationService;
 				elevator.getElevationForLocations({
 					'locations': [{lat: currentLatitude, lng: currentLongitude}]
@@ -96,6 +105,7 @@
 						if (results[0]) {
 							currentElevation = results[0].elevation;
 							console.log("Elevation: " + currentElevation);
+							currentElevation = Math.round(100 * currentElevation) / 100;
 							var displayElevation = document.createElement("p");
 							displayElevation.innerHTML = "Elevation: " + currentElevation + " meters";
 							displayLocation.appendChild(displayElevation);
@@ -106,20 +116,6 @@
 						currentElevation = "Elevation service failed due to: " + status;
 					}
 				});
-				//console.log("Elevation: " + currentElevation);
-				currentLatitude = Math.round(1e6 * currentLatitude) / 1e6;
-				currentLongitude = Math.round(1e6 * currentLongitude) / 1e6;
-				//currentElevation = Math.round(100 * currentElevation) / 100;
-				var displayLocation = document.getElementById("location");
-				var displayLatitude = document.createElement("p");
-				displayLatitude.innerHTML = "Latitude: " + currentLatitude;
-				var displayLongitude = document.createElement("p");
-				displayLongitude.innerHTML = "Longitude: " + currentLongitude;
-				//var displayElevation = document.createElement("p");
-				//displayElevation.innerHTML = "Elevation: " + currentElevation + " meters";
-				displayLocation.appendChild(displayLatitude);
-				displayLocation.appendChild(displayLongitude);
-				displayLocation.appendChild(displayElevation);
 			}
 			
 			function fail() {
