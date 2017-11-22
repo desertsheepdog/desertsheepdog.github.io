@@ -92,7 +92,7 @@
 				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 				var elevator = new google.maps.ElevationService();
 				elevator.getElevationForLocations({
-					'locations': [currentLatitude, currentLongitude]
+					'locations': [location]
 					}, function(results, status) {
 					if(status === 'OK') {
 						if (results[0]) {
