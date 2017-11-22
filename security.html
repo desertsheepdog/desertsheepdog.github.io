@@ -81,16 +81,14 @@
 				clearTimeout(waitForUser);
 				currentLatitude = position.coords.latitude;
 				currentLongitude = position.coords.longitude;
-				currentElevation = position.coordinates.altitude;
 				console.log("Latitude: " + currentLatitude);
 				console.log("Longitude: " + currentLongitude);
-				console.log("Elevation: " + currentElevation);
 				var mapOptions = {
 					center: new google.maps.LatLng(currentLatitude, currentLongitude),
 					zoom: 15
 				};
 				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-				/*var elevator = new google.maps.ElevationService();
+				var elevator = new google.maps.ElevationService();
 				elevator.getElevationForLocations({
 					'locations': [mapOptions.center]
 					}, function(results, status) {
@@ -103,7 +101,8 @@
 					} else {
 						currentElevation = 'Elevation service failed due to: ' + status;
 					}
-				});*/
+				});
+				console.log("Elevation: " + currentElevation);
 				currentLatitude = Math.round(1e6 * currentLatitude) / 1e6;
 				currentLongitude = Math.round(1e6 * currentLongitude) / 1e6;
 				//currentLatitude = currentLatitude.toFixed(6);
