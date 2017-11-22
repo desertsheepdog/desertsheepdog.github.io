@@ -95,6 +95,7 @@
 					if(status === 'OK') {
 						if (results[0]) {
 							currentElevation = results[0].elevation;
+							console.log("Elevation: " + currentElevation);
 						} else {
 							currentElevation = "Unable to acquire altitude";
 						}
@@ -102,7 +103,7 @@
 						currentElevation = "Elevation service failed due to: " + status;
 					}
 				});
-				console.log("Elevation: " + currentElevation);
+				//console.log("Elevation: " + currentElevation);
 				currentLatitude = Math.round(1e6 * currentLatitude) / 1e6;
 				currentLongitude = Math.round(1e6 * currentLongitude) / 1e6;
 				//currentElevation = Math.round(100 * currentElevation) / 100;
