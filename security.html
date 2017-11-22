@@ -90,7 +90,7 @@
 					zoom: 15
 				};
 				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-				var elevation = new google.maps.ElevationService();
+				var elevator = new google.maps.ElevationService();
 				elevator.getElevationForLocations(mapOptions.center, function (results, status) {
 					if(status == google.maps.ElevationStatus.OK) {
 						if (results[0]) {
