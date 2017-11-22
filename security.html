@@ -90,19 +90,18 @@
 					zoom: 15
 				};
 				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-				var positionRequest = {
-					locations: [currentLatitude, currentLongitude]
-					};
 				var elevator = new google.maps.ElevationService();
-				elevator.getElevationForLocations(positionRequest, function (results, status) {
-					if(status == google.maps.ElevationStatus.OK) {
+				elevator.getElevationForLocations({
+					'locations': [currentLatitude, currentLongitude]
+					}, function(results, status) {
+					if(status === 'OK') {
 						if (results[0]) {
-							currentElevation = results[0].elevation;
+							currentElevation = results[0].elevation + ' meters';
 						} else {
-							currentElevation = "Unable to acquire altitude";
+							currentElevation = 'Unable to acquire altitude';
 						}
 					} else {
-						currentElevation = "Elevation service failed due to: " + status;
+						currentElevation = 'Elevation service failed due to: ' + status;
 					}
 				});
 				currentLatitude = Math.round(1e6 * currentLatitude) / 1e6;
