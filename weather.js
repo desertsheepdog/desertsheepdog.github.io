@@ -5,6 +5,7 @@ var currentLatitude;
 var currentLongitude;
 var weatherReport;
 var httpRequest = false;
+var key = "760ce3d4a8ca81faf2c3dfb1fee3c583";
 
 function startGeolocation() {
 	waitForUser = setTimeout(fail, 10000);
@@ -44,7 +45,6 @@ function getWeather() {
    httpRequest.abort();
    httpRequest.open("get","weather.php?" + "lat=" + currentLatitude + "&lon=" + currentLongitude, true);
    httpRequest.send(null);
-   weatherReport = JSON.parse(httpRequest.responseText);
 }
 
 function loader(){
