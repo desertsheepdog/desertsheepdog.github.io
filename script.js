@@ -7,6 +7,7 @@ function pageLoad(){
 
 function displayMenu(event) {
 	$(event.currentTarget).children("ul").stop();
+	$(event.currentTarget).css("background-color", "rgb(74, 72, 75)");
 	$(event.currentTarget).children("ul").css("box-shadow", "rgb(10, 10, 20) 5px 5px 2px");
 	$(event.currentTarget).children("ul").slideDown("fast");
 }
@@ -14,7 +15,9 @@ function displayMenu(event) {
 function removeMenu(event) {
 		$(event.currentTarget).children("ul").slideUp("fast", function(){
 			$(event.currentTarget).children("ul").css("box-shadow", "none");
+			$(event.currentTarget).css("background-color", "rgb(36, 37, 43)");
 	});
+	
 }
 	
 $("ul.menu li").hover(displayMenu,removeMenu);
