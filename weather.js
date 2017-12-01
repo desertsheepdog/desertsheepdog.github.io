@@ -43,7 +43,7 @@ function getWeather() {
 	   httpRequest = getRequestObject();
    }
    httpRequest.abort();
-   httpRequest.open("get","solar.php?" + "lat=" + currentLatitude + "&lng=" + currentLongitude, true);
+   httpRequest.open("get","weather.php?" + "lat=" + currentLatitude + "&lng=" + currentLongitude, true);
    httpRequest.send(null);
 }
 
