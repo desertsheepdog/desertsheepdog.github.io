@@ -31,8 +31,7 @@ function getRequestObject() {
 		httpRequest = new XMLHttpRequest();
 	}
 	catch (requestError) {
-		document.querySelector("p.error").innerHTML = "Forecast not supported by your browser.";
-		document.querySelector("p.error").style.display = "block";
+		console.log("Forecast not supported by your browser.");
 		return false;
 	}
 	return httpRequest;
@@ -43,7 +42,7 @@ function getWeather() {
 	   httpRequest = getRequestObject();
    }
    httpRequest.abort();
-   httpRequest.open("get","weather.php?" + "lat=" + currentLatitude + "&lng=" + currentLongitude, true);
+   httpRequest.open("get","weather.php?" + "lat=" + currentLatitude + "&lon=" + currentLongitude, true);
    httpRequest.send(null);
 }
 
