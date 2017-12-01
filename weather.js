@@ -44,6 +44,7 @@ function getWeather() {
    httpRequest.abort();
    httpRequest.open("get","weather.php?" + "lat=" + currentLatitude + "&lon=" + currentLongitude, true);
    httpRequest.send(null);
+   weatherReport = JSON.parse(httpRequest.responseText);
 }
 
 function loader(){
