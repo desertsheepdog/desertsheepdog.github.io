@@ -50,7 +50,7 @@ function getWeather() {
    var req = new XMLHttpRequest();
    var payload = {location:null, tempurature:null, humididty:null};
    req.open("GET", url, true);
-   req.addEventListener('load', function()[
+   req.addEventListener('load', function(){
 	if(req.status >= 200 && req.status < 400){
 		var response = JSON.parse(req.responseText);
 		console.log(response);
