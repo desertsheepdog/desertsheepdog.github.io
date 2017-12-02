@@ -55,7 +55,7 @@ function getWeather() {
 		var response = JSON.parse(req.responseText);
 		console.log(response);
 	} else {
-		console.log("error in network request: " + request.statusText);
+		console.log("error in network request: " + req.statusText);
 	}});
 	req.send(null);
 }
