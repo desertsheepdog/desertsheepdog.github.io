@@ -39,13 +39,25 @@ function getRequestObject() {
 }
 
 function getWeather() {
-   if(!httpRequest) {
+   /*if(!httpRequest) {
 	   httpRequest = getRequestObject();
    }
    httpRequest.abort();
    httpRequest.open("get","weather.php?" + "lat=" + currentLatitude + "&lon=" + currentLongitude, true);
    httpRequest.send(null);
-   console.log(httpRequest);
+   console.log(httpRequest);*/
+   var url = "api.openweathermap.org/data/2.5/weather?lat=" + currentLatitude + "&lon=" + currentLongitude + "&APPID=760ce3d4a8ca81faf2c3dfb1fee3c583";
+   var req = new XMLHttpRequest();
+   var payload = {location:null, tempurature:null, humididty:null};
+   req.open("GET", url, true);
+   req.addEventListener('load', function()[
+	if(req.status >= 200 && req.status < 400){
+		var response = JSON.parse(req.responseText);
+		console.log(response);
+	} else {
+		console.log("error in network request: " + request.statusText);
+	}});
+	req.send(null);
 }
 
 function loader(){
