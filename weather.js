@@ -46,7 +46,7 @@ function getWeather() {
    httpRequest.open("get","weather.php?" + "lat=" + currentLatitude + "&lon=" + currentLongitude, true);
    httpRequest.send(null);
    console.log(httpRequest);*/
-   var url = "api.openweathermap.org/data/2.5/weather?lat=" + currentLatitude + "&lon=" + currentLongitude + "&APPID=760ce3d4a8ca81faf2c3dfb1fee3c583";
+   var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + currentLatitude + "&lon=" + currentLongitude + "&APPID=760ce3d4a8ca81faf2c3dfb1fee3c583";
    var req = new XMLHttpRequest();
    var payload = {location:null, tempurature:null, humididty:null};
    req.open("GET", url, true);
