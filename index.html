@@ -9,74 +9,115 @@
 		-->
 		<meta charset="UTF-8">
 		<title>Final Project</title>
-		<link href="styles.css" rel="stylesheet" />
-		<script src="modernizr.custom.05819.js"></script>
+		<link href="css/styles.css" rel="stylesheet" />
+		<script src="js/modernizr.custom.05819.js"></script>
 	</head>
 	<body>
-	<section id="backgroundImage">
 		<header>
 		<h1>CIS166AA Final Project</h1>
 		</header>
-		
-		<section>
-		<div id="color1">Color 1</div>
-		<div id="color2">Color 2</div>
-		<div id="color3">Color 3</div>
-		<div id="color4">Color 4</div>
-		<div id="color5">Color 5</div>
-		<div id="color6">Color 6</div>
-			<article>
-				<h2>Looping and Array Tutorials</h2>
-				<div id="articleText">
-				<p>Lorem ipsum dolor sit amet, ut his nibh consequat, id illud tritani eligendi pro. Cum at dolorem iudicabit, quo minim principes dissentias ut. An persius noluisse sententiae usu. Case dolore no mea. Minim fastidii eam ea, doming incorrupte at mei.Te sed liber timeam, cu harum nonumes corrumpit eum. Eam veri equidem tractatos no, ei mel verear mentitum expetendis. Cu quidam tacimates vel. Cum percipit deserunt ea. Mei te nulla delenit laboramus, probo virtute vulputate et ius.Solet mandamus consetetur ne vel, at est reque prompta. Movet paulo sit ex, stet hinc te usu. Et possit denique mel, cu usu porro sonet. Ad vis essent fastidii definitionem. Eos te atqui probatus, vis in tollit dictas aliquando, cu facer fuisset pro. Etiam nullam ei cum.In quodsi ocurreret conceptam vix. Ex minim solet indoctum eos, vix in legimus voluptatibus. Enim fugit nominati eos at, et prima graeci nec, vero habemus has cu. In veri sonet usu, ne qui latine torquatos, legendos periculis prodesset eu usu. Adhuc phaedrum has an, vix ne doming quaestio.Erant liberavisse eu his, ne eos purto tota recteque, et putant urbanitas eam. In mel meliore habemus, at eum tractatos voluptaria dissentiunt. Delicata qualisque ex pro, an ius libris efficiantur. Lorem quando legimus ex eam, eu vero singulis accusamus qui.</p>
-				</div>
-				<div id="sampleCode">
-				<p>Lorem ipsum dolor sit amet, ut his nibh consequat, id illud tritani eligendi pro. Cum at dolorem iudicabit, quo minim principes dissentias ut. An persius noluisse sententiae usu. Case dolore no mea.</p>
-				</div>
-			</article>
-			<aside>
-				<h2>Weather Forecast</h2>
-				<p>Lorem ipsum dolor sit amet, ut his nibh consequat, id illud tritani eligendi pro. Cum at dolorem iudicabit, quo minim principes dissentias ut. An persius noluisse sententiae usu. Case dolore no mea. Minim fastidii eam ea, doming incorrupte at mei.Te sed liber timeam, cu harum nonumes corrumpit eum. Eam veri equidem tractatos no, ei mel verear mentitum expetendis. Cu quidam tacimates vel. Cum percipit deserunt ea. Mei te nulla delenit laboramus, probo virtute vulputate et ius.Solet mandamus consetetur ne vel, at est reque prompta. Movet paulo sit ex, stet hinc te usu. Et possit denique mel, cu usu porro sonet. Ad vis essent fastidii definitionem.</p>
-			</aside>
-			<div id="navContainer">
+		<div id="navContainer">
 			<nav>
 				<ul class="menu">
 					<li id="menuBlank"></li>
-					<li><a href="#">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="#">Tutorials</a>
-						<ul class="submenu">
+						<ul id="tutorials" class="submenu">
 							<li>Arrays</li>
-							<li>Multidim. Arrays</li>
 							<li>For Loops</li>
 							<li>While Loops</li>
 							<li>Do While Loops</li>
 						</ul>
 					</li>
 					<li><a href="#">Code Snippets</a>
-						<ul class="submenu">
+						<ul id="snippets" class="submenu">
 							<li>Arrays</li>
 							<li>Loops</li>
 						</ul>
 					</li>
 					<li><a href="#">Resources</a>
-						<ul class="submenu">
+						<ul id="resources" class="submenu">
 							<li>jQuery</li>
 							<li>Modernizr</li>
 							<li>plainJS</li>
 							<li>GitHub</li>
-							<li>GoDaddy</li>
 						</ul>
 					</li>
 				</ul>
 			</nav>
 			</div>
-		</section>
+			<article>
+				<h2>Looping and Array Tutorials</h2>
+				<div id="description" class="tutorial">
+				<p>I wrote this tutorial mainly to describe Arrays and For Loops since they are widely used and in many cases go hand in hand. I have also included tutorials on While and Do/While Loops, in javascript they are similar to the For Loop and they do have their uses. In my opinion, though, it just makes more sense to utilize the For Loop. There are also two links included with the code snippets for easy reference. The resources are useful website for javascript coding that I have used and hopefully they can help you as well!
+				<br>Here is an example of code used in this page to populate the 3-Day forecast tables:</p>
+				<img id="exampleImage" src="images/arrayandloopexample.png" alt="example" />
+				</div>
+				<div id="example" class="tutorial">
+				<h3>Example</h3>
+				<p></p>
+				</div>
+				<div id="test">
+				<h3>Test Case</h3>
+				<p></p>
+				<div id="block1" class="testdiv"></div>
+				<div id="block2" class="testdiv"></div>
+				<div id="block3" class="testdiv"></div>
+				<div id="block4" class="testdiv"></div>
+				</div>
+			</article>
+			<aside>
+				<h2>Weather Forecast</h2>
+				<div id="todayContainer">
+					<img id="icon" src="" />
+					<h3>Today</h3>
+					<div id="todayCurrentHeader">
+						<p>Condition:</p>
+						<p>Temp:</p>
+						<p>Humidity:</p>
+						<p>Wind:</p>
+					</div>
+					<div id="todayCurrent">
+						<p id="currentWeather"></p>
+						<p id="currentTemp"></p>
+						<p id="currentHumidity"></p>
+						<p id="currentWind"></p>
+					</div>
+				</div>
+				<table>
+						<tr><th class="firstCell"></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+				</table>
+				<table>
+						<tr><th class="firstCell"></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+				</table>
+				<table>
+						<tr><th class="firstCell"></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+						<tr><th></th><td></td></tr>
+				</table>
+				<div id="attribution">
+					<a href="https://www.wunderground.com/"><img src="images/wundergroundLogo_4c_horz.png" alt="Weather Underground Logo" /></a>
+				</div>
+			</aside>
 		<footer>
 		<p>Copyright &copy 2017 David Goodyke</p>
 		</footer>
-		</section>
-		<script src="jquery-3.2.1.min.js"></script>
-		<script src="script.js"></script>
-		<script src="weather.js"></script>
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/weather.js"></script>
 	</body>
 </html>
