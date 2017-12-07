@@ -53,7 +53,7 @@ function getForecast() {
 	   httpRequest = getRequestObject();
    }
    httpRequest.abort();
-   httpRequest.open("get","forecast.php?" + "lat=" + currentLatitude + "&lon=" + currentLongitude, true);
+   httpRequest.open("get","https://desertsheepdog.github.io/forecast.php?" + "lat=" + currentLatitude + "&lon=" + currentLongitude, true);
    httpRequest.send(null);
    console.log(httpRequest);
    httpRequest.onreadystatechange = displayWeather;
