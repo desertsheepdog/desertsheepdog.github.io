@@ -60,7 +60,7 @@ function getForecast() {
 }
 
 function weatherSetup() {
-	var url = "http://api.wunderground.com/api/4a14b4e3dca2bcbd/geolookup/conditions/forecast/astronomy/q/" + currentLatitude + "," + currentLongitude + ".json";
+	var url = "http://api.wunderground.com/api/4a14b4e3dca2bcbd/geolookup/conditions/forecast/astronomy/q/" + currentLatitude + "," + currentLongitude + ".json?callback=getWeatherResults";
 	var script = document.createElement("script");
 	script.id = "jsonp";
 	script.src = url;
@@ -81,9 +81,9 @@ function getWeatherResults(results) {
 function displayWeather() {
 	
 	/*forecast data is parsed into a JSON object*/
-	if(httpRequest.readyState === 4 && httpRequest.status === 200) {
-		httpResponse = JSON.parse(this.responseText);
-
+	//if(httpRequest.readyState === 4 && httpRequest.status === 200) {
+		//httpResponse = JSON.parse(this.responseText);
+		htpResponse = results;
 		console.log(httpResponse);
 		
 		var cArray1 = [null, "condition:", "High Temp:", "Low Temp:", "Humidity:", "Wind:"];
@@ -137,11 +137,11 @@ function displayWeather() {
 				array ++;
 			}
 		}
-	}
+	//}
 }
 
 if (window.addEventListener) {
-   window.addEventListener("load", startGeolocation, false);
+   window.addEventListener("load", weatherSetup, false);
 } else if (window.attachEvent) {
-   window.attachEvent("onload", startGeolocation);
+   window.attachEvent("onload", weatherSetup);
 }
