@@ -33,7 +33,7 @@ function getLocation(position) {
 	clearTimeout(waitForUser);
 	currentLatitude = position.coords.latitude;
 	currentLongitude = position.coords.longitude;
-	getForecast();
+	weatherSetup();
 }
 
 /* getRequestObject and getForecast call forecast.php and populate httpRequest with forecast data from weather underground */
@@ -60,7 +60,7 @@ function getForecast() {
 }
 
 function weatherSetup() {
-	var url = "https://api.wunderground.com/api/4a14b4e3dca2bcbd/geolookup/conditions/forecast/astronomy/q/" + currentLatitude + "," + currentLongitude + ".json?callback=getWeatherResults";
+	var url = "http://api.wunderground.com/api/4a14b4e3dca2bcbd/geolookup/conditions/forecast/astronomy/q/" + currentLatitude + "," + currentLongitude + ".json?callback=getWeatherResults";
 	var script = document.createElement("script");
 	script.id = "jsonp";
 	script.src = url;
@@ -78,12 +78,12 @@ function getWeatherResults(results) {
 	}
 }
 
-function displayWeather() {
+function displayWeather(results) {
 	
 	/*forecast data is parsed into a JSON object*/
 	//if(httpRequest.readyState === 4 && httpRequest.status === 200) {
 		//httpResponse = JSON.parse(this.responseText);
-		htpResponse = results;
+		httpResponse = results;
 		console.log(httpResponse);
 		
 		var cArray1 = [null, "condition:", "High Temp:", "Low Temp:", "Humidity:", "Wind:"];
@@ -102,7 +102,9 @@ function displayWeather() {
 		var array;
 		
 		/* This checks sunrise and sunset times against current time pulled from weather underground api to chenge background to night img if condition is true */
-		if(Number(currentTime) < Number(sunrise) && Number(currentTime) > Number(sunset))
+		if(Number(currentTime) < Number(sunrise))
+			document.body.style.backgroundImage = "url('images/mountainsNightClear.png')";
+		else if(Number(currentTime) > Number(sunset))
 			document.body.style.backgroundImage = "url('images/mountainsNightClear.png')";
 		
 		/* This sets the current weather conditions section */
@@ -141,7 +143,7 @@ function displayWeather() {
 }
 
 if (window.addEventListener) {
-   window.addEventListener("load", weatherSetup, false);
+   window.addEventListener("load", startGeolocation, false);
 } else if (window.attachEvent) {
-   window.attachEvent("onload", weatherSetup);
+   window.attachEvent("onload", startGeolocation);
 }
