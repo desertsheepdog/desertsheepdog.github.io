@@ -11,6 +11,9 @@
 		<title>Final Project</title>
 		<link href="css/styles.css" rel="stylesheet" />
 		<script src="js/modernizr.custom.05819.js"></script>
+		<link rel="stylesheet" href="css/obsidian.css">
+		<script src="js/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
 	</head>
 	<body>
 		<header>
@@ -50,8 +53,48 @@
 				<h2>Looping and Array Tutorials</h2>
 				<div id="description" class="tutorial">
 				<p>I wrote this tutorial mainly to describe Arrays and For Loops since they are widely used and in many cases go hand in hand. I have also included tutorials on While and Do/While Loops, in javascript they are similar to the For Loop and they do have their uses. In my opinion, though, it just makes more sense to utilize the For Loop. There are also two links included with the code snippets for easy reference. The resources are useful website for javascript coding that I have used and hopefully they can help you as well!
+				<br>
 				<br>Here is an example of code used in this page to populate the 3-Day forecast tables:</p>
-				<img id="exampleImage" src="images/arrayandloopexample.PNG" alt="example" />
+				<pre>
+					<code id="syntaxExample">
+
+var row = document.querySelectorAll("tr");
+var col1 = document.querySelectorAll("th");
+var col2 = document.querySelectorAll("td");
+var cArray1 = [null, "condition:", "High Temp:", "Low Temp:", "Humidity:", "Wind:"];
+var cArray2 = [6];
+var count = 0;
+var length;
+var start;
+var array;
+
+for(var j = 1; j &#60; 4; j++){
+cArray1[0] = httpResponse.forecast.simpleforecast.forecastday[j].date.weekday;
+cArray2[0] = httpResponse.forecast.simpleforecast.forecastday[j].icon;
+cArray2[1] = httpResponse.forecast.simpleforecast.forecastday[j].conditions;
+cArray2[2] = httpResponse.forecast.simpleforecast.forecastday[j].high.fahrenheit + " F";
+cArray2[3] = httpResponse.forecast.simpleforecast.forecastday[j].low.fahrenheit + " F";
+cArray2[4] = httpResponse.forecast.simpleforecast.forecastday[j].avehumidity + "%";
+cArray2[5] = httpResponse.forecast.simpleforecast.forecastday[j].avewind.mph + " mph " + 
+             httpResponse.forecast.simpleforecast.forecastday[j].avewind.dir;
+count++;
+length = count * 6;
+start = length - 6;
+array = 0;
+for(var i = length - 6; i &#60; length; i++){
+      if(i == 0 || i == 6 || i == 12){
+         img = document.createElement("img");
+         img.src = "images/" + cArray2[0] + ".gif";
+         col2[i].appendChild(img);
+      } else {
+         col2[i].innerHTML = cArray2[array];
+      }
+      col1[i].innerHTML = cArray1[array];
+   array ++;
+   }
+}
+					</code>
+				</pre>
 				</div>
 				<div id="example" class="tutorial">
 				<h3>Example</h3>
@@ -59,7 +102,50 @@
 				</div>
 				<div id="test">
 				<h3>Test Case</h3>
-				<p></p>
+				<p id="preEx"></p>
+				<pre id="arrayEx">
+					<code>
+var metalBands = [];
+metalBands[0] = 'In Flames';
+metalBands[1] = 'Trivium';
+metalBands[2] = 'Amon Amarth';
+metalBands[3] = 'Children of Bodom';
+document.getElementById('block1').innerHTML = metalBands[0];
+document.getElementById('block2').innerHTML = metalBands[1];
+document.getElementById('block3').innerHTML = metalBands[2];
+document.getElementById('block4').innerHTML = metalBands[3];
+					</code>
+					</pre>
+					<pre id="forEx">
+					<code>
+var metalBands = ['In Flames', 'Trivium', 'Amon Amarth', 'Children of Bodom'];
+for(var i = 0; i &#60; metalBands.length; i++){
+   document.getElementById('block' + (i + 1)).innerHTML = metalBands[i];
+}
+					</code>
+					</pre>
+					<pre id="whileEx">
+					<code>
+var metalBands = ['In Flames', 'Trivium', 'Amon Amarth', 'Children of Bodom'];
+var i = 0;
+while(i &#60; metalBands.length){
+   document.getElementById('block' + (i + 1)).innerHTML = metalBands[i];
+   i++;
+}
+					</code>
+					</pre>
+					<pre id="doEx"
+					>
+					<code>
+var metalBands = ['In Flames', 'Trivium', 'Amon Amarth', 'Children of Bodom'];
+var i = 0;
+do{
+   document.getElementById('block' + (i + 1)).innerHTML = metalBands[i];
+   i++;
+}while(i &#60; metalBands.length);
+					</code>
+				</pre>
+				<button onclick="displayEx()"> Click Here To Run Code </button>
 				<div id="block1" class="testdiv"></div>
 				<div id="block2" class="testdiv"></div>
 				<div id="block3" class="testdiv"></div>
