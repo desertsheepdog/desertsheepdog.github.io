@@ -37,7 +37,7 @@ function getLocation(position) {
 
 /*Create script with json object, callback to getWeatherResults*/
 function weatherSetup() {
-	var url = "http://api.wunderground.com/api/4a14b4e3dca2bcbd/geolookup/conditions/forecast/astronomy/q/" + currentLatitude + "," + currentLongitude + ".json?callback=getWeatherResults";
+	var url = "https://api.wunderground.com/api/4a14b4e3dca2bcbd/geolookup/conditions/forecast/astronomy/q/" + currentLatitude + "," + currentLongitude + ".json?callback=getWeatherResults";
 	var script = document.createElement("script");
 	script.id = "jsonp";
 	script.src = url;
