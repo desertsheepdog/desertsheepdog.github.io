@@ -10,7 +10,7 @@ var elem6 = document.querySelector(".image2");
 var infoPanels = document.querySelectorAll(".infoPanel");
 
 function parallaxScroll() {
-	//if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		var scrollHeight = window.pageYOffset;
 		var verticleLimit = elem1.offsetTop + elem1.offsetHeight;
 		var horizontalLimit;
@@ -35,7 +35,7 @@ function parallaxScroll() {
 		} else {
 			elem4.style.backgroundPositionY = "0"; //edit or remove this
 		}
-	//}
+	}
 }
 
 function getScreenSize() {
