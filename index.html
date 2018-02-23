@@ -1,209 +1,190 @@
 <!DOCTYPE html>
 <html lang="eng">
 	<head>
-		<!--
-		Final Project
-		CIS166AA: Index.html
-		Author: David Goodyke
-		Date: 11/30/2017
-		-->
-		<meta charset="UTF-8">
-		<title>Final Project</title>
-		<link href="css/styles.css" rel="stylesheet" />
-		<script src="js/modernizr.custom.05819.js"></script>
-		<link rel="stylesheet" href="css/obsidian.css">
-		<script src="js/highlight.pack.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-	</head>
-	<body>
-		<header>
-		<h1>CIS166AA Final Project</h1>
-		</header>
-		<div id="navContainer">
-			<nav>
-				<ul class="menu">
-					<li id="menuBlank"></li>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#">Tutorials</a>
-						<ul id="tutorials" class="submenu">
-							<li>Arrays</li>
-							<li>For Loops</li>
-							<li>While Loops</li>
-							<li>Do While Loops</li>
-						</ul>
-					</li>
-					<li><a href="#">Code Snippets</a>
-						<ul id="snippets" class="submenu">
-							<li>Arrays</li>
-							<li>Loops</li>
-						</ul>
-					</li>
-					<li><a href="#">Resources</a>
-						<ul id="resources" class="submenu">
-							<li>jQuery</li>
-							<li>Modernizr</li>
-							<li>plainJS</li>
-							<li>GitHub</li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="David Goodyke">
+	<title>Serenity Laser Sculpting</title>
+	<link rel="stylesheet" href="style.css" media="screen and (min-device-width: 401px)" />
+	<link rel="stylesheet" href="mobile.css" media="handheld, only screen and (max-device-width: 400px)" />
+</head>
+
+<body>
+	<header>
+		<div class="headerContent">
+			<a id="bookNow"  href="https://www.schedulicity.com/scheduling/SS7XPX">Book A Massage</a>
+			<div id="logo">
+            <img src="img/logo.png" />
 			</div>
-			<article>
-				<h2>Looping and Array Tutorials</h2>
-				<div id="description" class="tutorial">
-				<p>I wrote this tutorial mainly to describe Arrays and For Loops since they are widely used and in many cases go hand in hand. I have also included tutorials on While and Do/While Loops, in javascript they are similar to the For Loop and they do have their uses. In my opinion, though, it just makes more sense to utilize the For Loop. There are also two links included with the code snippets for easy reference. The resources are useful website for javascript coding that I have used and hopefully they can help you as well!
-				<br>
-				<br>Here is an example of code used in this page to populate the 3-Day forecast tables:</p>
-				<pre>
-					<code id="syntaxExample">
-
-var row = document.querySelectorAll("tr");
-var col1 = document.querySelectorAll("th");
-var col2 = document.querySelectorAll("td");
-var cArray1 = [null, "condition:", "High Temp:", "Low Temp:", "Humidity:", "Wind:"];
-var cArray2 = [6];
-var count = 0;
-var length;
-var start;
-var array;
-
-for(var j = 1; j &#60; 4; j++){
-cArray1[0] = httpResponse.forecast.simpleforecast.forecastday[j].date.weekday;
-cArray2[0] = httpResponse.forecast.simpleforecast.forecastday[j].icon;
-cArray2[1] = httpResponse.forecast.simpleforecast.forecastday[j].conditions;
-cArray2[2] = httpResponse.forecast.simpleforecast.forecastday[j].high.fahrenheit + " F";
-cArray2[3] = httpResponse.forecast.simpleforecast.forecastday[j].low.fahrenheit + " F";
-cArray2[4] = httpResponse.forecast.simpleforecast.forecastday[j].avehumidity + "%";
-cArray2[5] = httpResponse.forecast.simpleforecast.forecastday[j].avewind.mph + " mph " + 
-             httpResponse.forecast.simpleforecast.forecastday[j].avewind.dir;
-count++;
-length = count * 6;
-start = length - 6;
-array = 0;
-for(var i = length - 6; i &#60; length; i++){
-      if(i == 0 || i == 6 || i == 12){
-         img = document.createElement("img");
-         img.src = "images/" + cArray2[0] + ".gif";
-         col2[i].appendChild(img);
-      } else {
-         col2[i].innerHTML = cArray2[array];
-      }
-      col1[i].innerHTML = cArray1[array];
-   array ++;
-   }
-}
-					</code>
-				</pre>
-				</div>
-				<div id="example" class="tutorial">
-				<h3>Example</h3>
-				<p></p>
-				</div>
-				<div id="test">
-				<h3>Test Case</h3>
-				<p id="preEx"></p>
-				<pre id="arrayEx">
-					<code>
-var metalBands = [];
-metalBands[0] = 'In Flames';
-metalBands[1] = 'Trivium';
-metalBands[2] = 'Amon Amarth';
-metalBands[3] = 'Children of Bodom';
-document.getElementById('block1').innerHTML = metalBands[0];
-document.getElementById('block2').innerHTML = metalBands[1];
-document.getElementById('block3').innerHTML = metalBands[2];
-document.getElementById('block4').innerHTML = metalBands[3];
-					</code>
-					</pre>
-					<pre id="forEx">
-					<code>
-var metalBands = ['In Flames', 'Trivium', 'Amon Amarth', 'Children of Bodom'];
-for(var i = 0; i &#60; metalBands.length; i++){
-   document.getElementById('block' + (i + 1)).innerHTML = metalBands[i];
-}
-					</code>
-					</pre>
-					<pre id="whileEx">
-					<code>
-var metalBands = ['In Flames', 'Trivium', 'Amon Amarth', 'Children of Bodom'];
-var i = 0;
-while(i &#60; metalBands.length){
-   document.getElementById('block' + (i + 1)).innerHTML = metalBands[i];
-   i++;
-}
-					</code>
-					</pre>
-					<pre id="doEx"
-					>
-					<code>
-var metalBands = ['In Flames', 'Trivium', 'Amon Amarth', 'Children of Bodom'];
-var i = 0;
-do{
-   document.getElementById('block' + (i + 1)).innerHTML = metalBands[i];
-   i++;
-}while(i &#60; metalBands.length);
-					</code>
-				</pre>
-				<button onclick="displayEx()"> Click Here To Run Code </button>
-				<div id="block1" class="testdiv"></div>
-				<div id="block2" class="testdiv"></div>
-				<div id="block3" class="testdiv"></div>
-				<div id="block4" class="testdiv"></div>
-				</div>
-			</article>
-			<aside>
-				<h2>Weather Forecast</h2>
-				<div id="todayContainer">
-					<img id="icon" src="" />
-					<h3>Today</h3>
-					<div id="todayCurrentHeader">
-						<p>Condition:</p>
-						<p>Temp:</p>
-						<p>Humidity:</p>
-						<p>Wind:</p>
+			<address>
+				    Located at Leidan Mitchell Salon and Spa<br>
+				    (602) 619-0669 | 2177 West Queen Creek Road | Chandler, AZ 85248
+			</address>
+			<div id="downArrow">
+				<img src="img/downArrow.png" />
+			</div>
+		</div>
+	</header>
+	<section class="main" id="main">
+		<section class="infoPanel" id="laserInfo">
+			<div id="laserHeader" class="panelHeader">
+				<h1>Laser Sculpting</h1>
+			</div>
+			<div id="laserBody" class="panelBody">
+				<div id="laserContent" class="panelContent">
+					<ul>
+						<li>Non-surgical</li>
+						<li>Non-invasive</li>
+                        <li>Painless and Safe</li>
+						<li>FDA Approved</li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia lobortis turpis ut varius. Etiam non lorem ac urna mattis dapibus. Quisque nec suscipit quam, eget aliquet ligula. Suspendisse sit amet eros ac purus bibendum pretium. Aenean porttitor augue at posuere lacinia. Morbi aliquet orci ut eros egestas, at accumsan magna dapibus. Pellentesque volutpat ante sed lorem porttitor, id tempus tellus porta. In sagittis at mauris nec molestie. Fusce quis felis lorem. Maecenas tincidunt nisi et elit semper tempus. Integer sollicitudin imperdiet ipsum. Suspendisse potenti. Phasellus efficitur tortor rhoncus quam tempor tincidunt.</p>
+                </div>
+						<ul class="panelNav">
+                      <li>
+                          <a href="form.html" target="_blank">
+                              <img src="img/emailIcon.png" alt="email" title="Email Us"/>
+									  <p>Email Inquiries</p>
+                          </a>
+                      </li>
+				      <li>
+                          <a href="tel:6026190669">
+                              <img src="img/phoneIcon.png" alt="phone" title="Call Us" />
+									  <p>Call Us</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="laserInfo.html" target="_blank">
+                              <img src="img/plusIcon.png" alt="more" title="More Info" />
+									  <p>More Info</p>
+                          </a>
+                      </li>
+                  </ul>
+			</div>
+            
+		</section>
+        <section id="sunFXInfo" class="infoPanel">
+			<div class="panelHeader">
+				<h1>SunFX Spray Tan</h1>
+			</div>
+			  <div id="sunFXBody" class="panelBody">
+			<div id="sunFXContent" class="panelContent">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia lobortis turpis ut varius. Etiam non lorem ac urna mattis dapibus. Quisque nec suscipit quam, eget aliquet ligula. Suspendisse sit amet eros ac purus bibendum pretium. Aenean porttitor augue at posuere lacinia. Morbi aliquet orci ut eros egestas, at accumsan magna dapibus. Pellentesque volutpat ante sed lorem porttitor, id tempus tellus porta. In sagittis at mauris nec molestie. Fusce quis felis lorem. Maecenas tincidunt nisi et elit semper tempus. Integer sollicitudin imperdiet ipsum. Suspendisse potenti. Phasellus efficitur tortor rhoncus quam tempor tincidunt.</p>
+			</div>
+			  <ul class="panelNav">
+                      <li>
+                          <a href="form.html" target="_blank">
+                              <img src="img/emailIcon.png" alt="email" title="Email Us"/>
+                              Email Inquiries
+                          </a>
+                      </li>
+				      <li>
+                          <a href="tel:6026190669">
+                              <img src="img/phoneIcon.png" alt="phone" title="Call Us" />
+                              Call Us (602) 619-0669
+                          </a>
+                      </li>
+                      <li>
+                          <a href="laserInfo.html" target="_blank">
+                              <img src="img/plusIcon.png" alt="more" title="More Info" />
+                              More Info
+                          </a>
+                      </li>
+                  </ul>
+			  </div>
+		</section>
+		<section class="infoPanel" id="massageInfo">
+			<div class="panelHeader">
+				<h1>Massage Therapy</h1>
+			</div>
+			<div id="massageBody" class="panelBody">
+				<div id="massageContent" class="panelContent">
+				<p>Massage therapy is becoming mainstream in the area of stress reduction, the easing of aches and pains and the improvement of many health issues. The National Certification Board for Therapeutic Massage and Bodywork finds many health benefits from massage including:</p>
+				<ul>
+					<li>Reduced blood pressure</li>
+					<li>A stronger immune system</li>
+					<li>Increased circulation</li>
+					<li>Pain, stiffness and chronic back pain relief</li>
+					<li>Increased mobility and speed of the healing process</li>
+					<li>Easier time through pregnancy</li>
+				</ul>
+				<p>With high pressure jobs, over-committed obligations and trying to pack three days of priorities into one it’s no wonder we are overstressed. Massage therapy provides a peaceful and tranquil environment where gentle, medium and firm flowing massage strokes are applied to the skin and muscle tissue. These massage strokes stimulate many of our body systems such as the lymphatic, circulatory and cardiovascular system. As the circulatory system is being stimulated through massage the cardiovascular system is sending highly oxygenated blood throughout the body and skin. Toxins and other waste products being held in the body and muscle tissue are being released and carried through our lymphatic system for elimination. Massage has an effect on the nervous system which promotes a sense of well being and calming of the mind which helps in stress reduction and has an effect on the nerves and reflex points in the body enhancing muscle relaxation. It alleviates muscle pain and tension in all areas of the body due to stress, arthritis, fibromyalgia, muscular overexertion and pregnancy just to name a few. Muscle spasms caused by repetitive muscle tension due to working at a computer terminal all day, driving long hours, a job requiring lifting or bending, or being in an airplane for any length of time can be relieved by getting a massage. Flexibility and movement are improved in the joints and muscles which help reduce sports injuries and the discomforts of pregnancy.</p>
+				<p>There are many types of massage that can benefit the body and can help with a myriad of chronic conditions and diseases. Why not give it a try? It may be the most wonderful experiences of your life!</p>
+				<p>*When searching for a massage therapist, make sure they are licensed with a minimum of 750 hours of study with a certificate of completion.</p>
+			</div>
+            <div id="massageContent2" class="panelContent">
+				<section id="servicesA">
+					<h2>Massage Services</h2>
+					<div id="serviceA1" class="services">
+						<h3>Relaxation</h3>
+						<p><br>60 min $75.00</p>
+						<p>90 min $110.00</p>
+						<p><br>A light to medium full body massage. Enhances relaxation and rejuvenation.</p>
 					</div>
-					<div id="todayCurrent">
-						<p id="currentWeather"></p>
-						<p id="currentTemp"></p>
-						<p id="currentHumidity"></p>
-						<p id="currentWind"></p>
+					<div id="serviceA2" class="services">
+						<h3>Prenatal</h3>
+						<p><br>60 min $85.00</p>
+						<p><br>A gentle massage for the mother-to-be is beneficial for lower back pain, hip pain and sciatica. It helps reduce swelling in ankles and feet and helps relieve stress on weight bearing joints. A definite must for all expectant mothers.</p>
 					</div>
-				</div>
-				<table>
-						<tr><th class="firstCell"></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-				</table>
-				<table>
-						<tr><th class="firstCell"></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-				</table>
-				<table>
-						<tr><th class="firstCell"></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-						<tr><th></th><td></td></tr>
-				</table>
-				<div id="attribution">
-					<a href="https://www.wunderground.com/"><img src="images/wundergroundLogo_4c_horz.png" alt="Weather Underground Logo" /></a>
-				</div>
-			</aside>
-		<footer>
-		<p>Copyright &copy 2017 David Goodyke</p>
-		</footer>
+					<div id="serviceA3" class="services">
+						<h3>Therapeutic</h3>
+						<p><br>75 min $90.00</p>
+						<p>90 min $110.00</p>
+						<p>120 min $145.00</p>
+						<p><br>A slow methodical medium to very firm pressure massage concentrating on the areas causing pain and discomfort due to tightness, muscle restriction, frozen shoulder, etc. A variety of methods are used to unlock the tension and resistance in the muscles to improve the range of motion and relaxation in those areas. This therapy can be extended to a 2 hour session if needed.</p>
+					</div>
+				</section>
+					</div>
+					<ul class="panelNav">
+                      <li>
+                          <a href="form.html" target="_blank">
+                              <img src="img/emailIcon.png" alt="email" title="Email Us"/>
+                              Email Inquiries
+                          </a>
+                      </li>
+				      <li>
+                          <a href="tel:6026190669">
+                              <img src="img/phoneIcon.png" alt="phone" title="Call Us" />
+                              Call Us (602) 619-0669
+                          </a>
+                      </li>
+                      <li>
+                          <a href="laserInfo.html" target="_blank">
+                              <img src="img/plusIcon.png" alt="more" title="More Info" />
+                              More Info
+                          </a>
+                      </li>
+                  </ul>
+			
+			</div>
+		</section>
 		
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/script.js"></script>
-		<script src="js/weather.js"></script>
-	</body>
+		<section class="infoPanel" id="importantInfo">
+			<div class="panelHeader">
+				<h1>Policies</h1>
+			</div>
+			<div class="panelBody">
+				<h2>Health</h2>
+				<p>All clients are required to complete a health questionnaire so that your service can be customized to your specific needs. Some massage modalities and body treatments are contraindications for certain health issues.</p>
+				<h2>Booking Appointments</h2>
+				<p>To ensure availability of your preferred time, it is recommended to click the link below to book your appointment at least one week in advance.</p>
+				<h2>Cancellations</h2>
+				<p>Should you need to cancel your appointment, please call at least 24 hours ahead of your appointment time so I can book someone else in that time slot.</p>
+				<h2>Gift Certificates</h2>
+				<p>Gift Certificates can be purchased through me or the front desk.</p>
+				<h2>Age Requirements</h2>
+				<p>The spa is an adult- oriented atmosphere. Clients must be 18 years old to receive body services. I will provide body services to teens at least 16 years old with parental permission.</p>
+				<h2>Insurance Billing</h2>
+				<p>Payment is expected at time of service. However, I can provide you with a billing statement that you can submit to your insurance company or health savings plan for reimbursement. I accept cash, check and credit cards.</p>
+				<h2>Disclaimer</h2>
+				<p>I do not diagnose illness, disease or any other physical or mental disorder. Massage therapy is given for the purpose of relaxation, stress reduction, relief from muscular tension, spasm and stiff joints, and increased blood flow and circulation. It is the client's responsibility to inform me of all medical issues past and present including skin conditions, sensitivities, disorders, and allergies especially to fragrances, creams and oils.</p>
+			</div>
+		</section>
+	</section>
+	<footer>
+		<p>Content copyright 2018. serenitysspring.com. All rights reserved.</p>
+		<a href="#">Contact Us</a>
+	</footer>
+	<script src="script.js"></script>
+</body>
 </html>
