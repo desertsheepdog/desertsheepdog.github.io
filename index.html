@@ -4,9 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="David Goodyke">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	<title>Serenity Laser Sculpting</title>
-	<link rel="stylesheet" href="desktop.css" media="screen and (min-device-width: 401px)" />
-	<link rel="stylesheet" href="mobile.css" media="handheld, only screen and (max-device-width: 400px)" />
+	<link rel="stylesheet" href="desktop.css" media="screen and (min-device-width: 1024px)" />
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-device-width: 441px) and (max-device-width: 1023px)" />
+	<link rel="stylesheet" href="mobile.css" media="screen and (max-device-width: 440px)" />
 </head>
 
 <body>
@@ -169,7 +171,8 @@
 				<h1>Contact Us</h1>
 			</div>
 			
-			<div class="panelContent">
+			<div class="panelBody" id="contactPanel">
+                <div class="panelContent">
 				<A NAME="goTo"></A>
 				Contact us by phone <a href="tel:6026190669">(602) 619 - 0669</a> or
 				<form action="mailto:someone@example.com" method="post" enctype="text/plain">
@@ -183,14 +186,15 @@
             <input class="button" type="reset" value="Reset">
 				<p>*Fields are required</p>
         </form>
+                </div>
+            <footer>
+		      <p>Content copyright 2018. serenitysspring.com. All rights reserved.</p>
+		      <a href="#">Contact Us</a>
+		      <a href="policies">Policies</a>
+	       </footer>
 			</div>
 		</section>
 	</section>
-	<footer>
-		<p>Content copyright 2018. serenitysspring.com. All rights reserved.</p>
-		<a href="#">Contact Us</a>
-		<a href="policies">Policies</a>
-	</footer>
 	<script src="script.js"></script>
 </body>
 </html>

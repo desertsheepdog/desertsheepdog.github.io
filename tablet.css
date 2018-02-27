@@ -253,7 +253,7 @@ h3, h4 {
 	background-position: right center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100%;
 }
 
 #sunFXInfo {
@@ -261,7 +261,7 @@ h3, h4 {
 	background-position: right center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100%;
 }
 
 #massageInfo {
@@ -269,7 +269,7 @@ h3, h4 {
 	background-position: right center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100%;
 }
 
 #contactUs {
@@ -277,7 +277,7 @@ h3, h4 {
 	background-position: center bottom;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	
+	background-size: 100%;
 }
 
 .panelNav {
@@ -386,13 +386,9 @@ h3, h4 {
 
 #contactUs {
 	min-height: 95vh;
+	margin: 0;
+	padding: 0;
 }
-
-#contactPanel {
-    min-height: 85vh;
-}
-
-
 
 input {
     display: block;
@@ -405,10 +401,8 @@ textarea {
     display: block;
     clear: both;
     float: left;
-    min-width: 300px;
-    min-height: 300px;
-    max-width: 300px;
-    max-height: 300px;
+    width: 300px;
+    height: 300px;
 }
 
 label {
