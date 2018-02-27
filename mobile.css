@@ -180,6 +180,7 @@ h3, h4 {
 }
 
 .infoPanel {
+	display: table;
 	position: relative;
 	z-index: 1;
 	display: block;
@@ -188,7 +189,9 @@ h3, h4 {
 }
 
 .panelHeader {
-    height: 10vh;
+	display: table;
+	width: 100%;
+    min-height: 10vh;
 	 padding: 0;
     background-color: rgb(170, 170, 190);
     color: white;
@@ -196,10 +199,11 @@ h3, h4 {
 }
 
 .panelHeader h1 {
+	display: block;
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	font-size: 4em;
+	font-size: 3em;
 	text-align: center;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
     background-clip: text;
@@ -210,14 +214,14 @@ h3, h4 {
 }
 
 .panelBody {
-   height: 90vh;
+   min-height: 90vh;
 }
 
 .panelContent {
     display: block;
 	float: left;
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     margin: 0;
 	padding: 0;
     opacity: 1;
@@ -232,7 +236,7 @@ h3, h4 {
 	background-position: right top;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: 300%;
+	background-size: cover;
 }
 
 #sunFXInfo {
@@ -240,7 +244,7 @@ h3, h4 {
 	background-position: right top;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: 300%;
+	background-size: cover;
 }
 
 #massageInfo {
@@ -248,7 +252,7 @@ h3, h4 {
 	background-position: right -100px top;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: 300%;
+	background-size: cover;
 }
 
 .panelNav {
@@ -258,7 +262,7 @@ h3, h4 {
 	clear: both;
 	z-index: 2;
     width: 100%;
-	height: 5vh;
+	min-height: 5vh;
     text-align: center;
 	margin: 0 0 0 0;
     padding: 0;
@@ -310,7 +314,7 @@ h3, h4 {
     clear: none;
     float: left;
     width: 50%;
-    height: 42.5vh;
+    min-height: 42.5vh;
     padding: 0;
     margin: 0;
 }
@@ -333,7 +337,7 @@ h3, h4 {
 	margin: 0;
 	padding: 0;
 	width: 25%;
-	height: 300px;
+	min-height: 300px;
 }
 
 .services h1 {
@@ -359,10 +363,6 @@ h3, h4 {
 .services p {
     margin: 0;
     font-size: .8em;
-}
-
-#importantInfo {
-	min-height: 95vh;
 }
 
 footer {
