@@ -20,7 +20,7 @@ function parallaxScroll() {
 		console.log("Scroll Height " + scrollHeight + "px");
 
 		if (scrollHeight < screenHeight && scrollHeight <= limit2) {
-			elem1.style.backgroundPositionY = ((scrollHeight / -3) -1500) + "px";
+			elem1.style.backgroundPositionY = ((scrollHeight / -3) ) + "px";
 		} else {
 			elem1.style.backgroundPositionY = "0"; //edit or remove this
 		}
@@ -42,11 +42,6 @@ function getScreenSize() {
 	console.log(screenHeight);
 	console.log(screenWidth);
 	console.log(elem1.style.backgroundPositionY)
-	//infoPanels[0].style.marginTop = screenHeight;
-	//for(var i = 0; i < infoPanels.length; i++){
-	//    infoPanels[i].style.top = (screenHeight * (i + 1)) + "px";
-	//    //console.log("panel " + (i + 1) + ": " + infoPanels[i].style.top);
-	//}
 }
 
 if (window.addEventListener) {
