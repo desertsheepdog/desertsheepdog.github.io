@@ -183,7 +183,6 @@ h3, h4 {
 .infoPanel {
 	display: table;
 	position: relative;
-	z-index: 1;
 	display: block;
 	min-height: 100vh;
 }
@@ -213,10 +212,7 @@ h3, h4 {
     vertical-align: middle;
 }
 
-.panelBody {
-   min-height: 90vh;
-	
-}
+
 
 .panelContent {
     display: block;
@@ -225,7 +221,6 @@ h3, h4 {
     min-height: 80vh;
     margin: 0;
 	padding: 0;
-    opacity: 1;
 }
 
 .panelContent p {
@@ -235,7 +230,7 @@ h3, h4 {
 #laserInfo {
 	background-image: url("img/mLaser.jpg");
 	background-position: center top;
-	background-attachment: scroll;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 }
@@ -243,7 +238,7 @@ h3, h4 {
 #sunFXInfo {
 	background-image: url("img/mSunFX.jpg");
 	background-position: center top;
-	background-attachment: scroll;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 }
@@ -251,7 +246,7 @@ h3, h4 {
 #massageInfo {
 	background-image: url("img/mMassage.jpg");
 	background-position: center top;
-	background-attachment: scroll;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 }
