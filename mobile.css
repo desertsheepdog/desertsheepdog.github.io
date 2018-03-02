@@ -56,7 +56,7 @@ header {
 	height: 100vh;
 	width: 100%;
 	background-image: url("img/mHeader.jpg");
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: 100% auto;
@@ -73,12 +73,10 @@ header {
 #logo {
 	display: block;
 	clear: both;
-	margin: 0;
 	padding: 0;
 	margin: auto;
-	padding: 0;
 	width: 100%;
-	height: 70vh;
+	height: 60vh;
 }
 
 #logo img {
@@ -88,8 +86,6 @@ header {
     height: auto;
 	margin: 0;
 	padding: 0;
-	display: block;
-	margin: auto;
 }
 
 header address {
@@ -98,6 +94,7 @@ header address {
 	padding: 0;
 	width: 100%;
 	height: 5vh;
+	font-size: .8em;
 	font-weight: bold;
 	text-align: center;
 	color: white;
@@ -128,12 +125,12 @@ header address {
 }
 
 header a:visited {
-	color: white;
+	color: rgb(131, 158, 179);
 	text-decoration: none;
 }
 
 header a:link {
-	color: white;
+	color: rgb(131, 158, 179);
 	text-decoration: none;
 }
 
@@ -178,17 +175,15 @@ h3, h4 {
 	text-align: center;
 }
 
-}
-
 .infoPanel {
-	display: table;
 	position: relative;
+	z-index: 1;
 	display: block;
 	min-height: 100vh;
 }
 
 .panelHeader {
-	display: table;
+    display: table;
 	width: 100%;
     min-height: 10vh;
 	 padding: 0;
@@ -212,15 +207,22 @@ h3, h4 {
     vertical-align: middle;
 }
 
-
+.panelBody {
+	display: table;
+   min-height: 90vh;
+}
 
 .panelContent {
     display: block;
 	float: left;
     width: 100%;
-    min-height: 80vh;
-    margin: 0;
+    min-height: 75vh;
+    margin: 2.5vh 0 0 0;
 	padding: 0;
+}
+
+.panelContent h2 {
+	text-align: center;
 }
 
 .panelContent p {
@@ -229,30 +231,30 @@ h3, h4 {
 
 #laserInfo {
 	background-image: url("img/mLaser.jpg");
-	background-position: center top;
-	background-attachment: fixed;
+	background-position: top;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: 100% auto;
+	background-size: cover;
 }
 
 #sunFXInfo {
 	background-image: url("img/mSunFX.jpg");
-	background-position: center top;
-	background-attachment: fixed;
+	background-position: top;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: 100% auto;
+	background-size: cover;
 }
 
 #massageInfo {
 	background-image: url("img/mMassage.jpg");
-	background-position: center top;
-	background-attachment: fixed;
+	background-position: top;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: 100% auto;
+	background-size: cover;
 }
 
 .panelNav {
-    display: block;
+   display: block;
 	position: relative;
 	float: left;
 	clear: both;
@@ -262,8 +264,6 @@ h3, h4 {
     text-align: center;
 	margin: 0 0 0 0;
     padding: 0;
-	
-   
 }
 
 .panelNav p {
@@ -282,12 +282,17 @@ h3, h4 {
 	vertical-align: middle;
 }
 
+.infoPanel {
+	min-height: 100vh;
+}
+
 .infoPanel a {
     display: inline-block;
     clear: none;
     color: white;
     text-align: center;
 	 text-decoration: none;
+	font-size: 1.25em;
 }
 
 
@@ -301,8 +306,22 @@ h3, h4 {
 	text-decoration: none;
 }
 
+.panelNav img {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+}
+
+.panelNav p {
+	display: inline-block;
+	margin: 0;
+	
+}
+
 #massageContent2 {
-    display: none;
+	display: table;
+	text-align: center;
+	margin: auto;
 }
 
 .infoPanelContent {
@@ -310,7 +329,7 @@ h3, h4 {
     clear: none;
     float: left;
     width: 50%;
-    min-height: 42.5vh;
+    height: 42.5vh;
     padding: 0;
     margin: 0;
 }
@@ -332,8 +351,8 @@ h3, h4 {
 	float: left;
 	margin: 0;
 	padding: 0;
-	width: 25%;
-	min-height: 300px;
+	width: 32.5%;
+	height: 300px;
 }
 
 .services h1 {
@@ -359,6 +378,14 @@ h3, h4 {
 .services p {
     margin: 0;
     font-size: .8em;
+}
+
+#contactUs {
+	min-height: 95vh;
+}
+
+#contactPanel {
+    min-height: 85vh;
 }
 
 form {
@@ -393,12 +420,16 @@ label {
 }
 
 footer {
+	display: block;
+	position: absolute;
+	margin: auto;
+	bottom: 0;
 	height: 5vh;
-	background-color: rgb(255, 255, 255);
 	padding: 5px 10px;
 	text-align: center;
 }
 
-footer p {
-	margin: 0;
+footer * {
+	display: inline-block;
+	margin: 0 20px 0 0;
 }
