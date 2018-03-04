@@ -43,7 +43,8 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-	background-color: rgb(131, 158, 179);
+    background-color: rgb(185, 204, 217);
+        
 }
 
 ::-webkit-scrollbar-thumb {
@@ -129,20 +130,24 @@ header address {
 	display: block;
 	position: absolute;
 	right: 10px;
-	margin: 0;
+	margin: 10px;
+    padding: 5px 15px;
 	font-size: 2em;
 	font-weight: bold;
-	color: rgb(131, 158, 179);
+	color: white;
 	text-shadow: 2px 2px 2px black;
+    background-color: rgb(131, 158, 179);
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px black;
 }
 
 header a:visited {
-	color: rgb(131, 158, 179);
+	color: white;
 	text-decoration: none;
 }
 
 header a:link {
-	color: rgb(131, 158, 179);
+	color: white;
 	text-decoration: none;
 }
 
@@ -187,14 +192,11 @@ h3, h4 {
 	text-align: center;
 }
 
-}
-
 .infoPanel {
 	position: relative;
 	z-index: 1;
 	display: block;
 	min-height: 100vh;
-   background-color: white;
 }
 
 .panelHeader {
@@ -203,7 +205,6 @@ h3, h4 {
     background-color: rgb(131, 158, 179);
     color: white;
     box-shadow: 0px 2px 2px black;
-    
 }
 
 .panelHeader h1 {
@@ -228,7 +229,7 @@ h3, h4 {
 .panelContent {
     display: block;
 	float: left;
-    width: 50%;
+    width: 60%;
     height: 75vh;
     margin: 2.5vh 0 0 0;
 	padding: 0;
@@ -270,7 +271,7 @@ h3, h4 {
 }
 
 #contactUs {
-	background-image: url("img/headerBackground.jpg");
+	background-image: url("img/headerBackground2.jpg");
 	background-position: center bottom;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -282,20 +283,24 @@ h3, h4 {
 	float: left;
 	clear: both;
 	z-index: 2;
-   width: 50%;
+   width: 60%;
 	height: 5vh;
    text-align: center;
 	margin: 0 0 0 0;
    padding: 1vh 0 0 0;
-	background-color: rgb(131, 158, 179);
+	background-color: rgb(185, 204, 217);
    box-shadow: 2px 2px 2px black;
 }
 
 .panelNav li {
     display: inline-block;
-	width: 32%;
+	width: 49%;
     color: white;
 	
+}
+
+.infoPanel {
+	min-height: 100vh;
 }
 
 .infoPanel a {
@@ -344,6 +349,18 @@ h3, h4 {
     height: 42.5vh;
     padding: 0;
     margin: 0;
+}
+
+#background2 {
+	position: fixed;
+	z-index: -2;
+}
+
+#servicesA {
+	display: block;
+	clear: both;
+	margin: 0;
+	padding: 0;
 }
 
 .services {

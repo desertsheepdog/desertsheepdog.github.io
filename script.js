@@ -20,7 +20,7 @@ function parallaxScroll() {
 		console.log("Scroll Height " + scrollHeight + "px");
 
 		if (scrollHeight < screenHeight && scrollHeight <= limit2) {
-			elem1.style.backgroundPositionY = ((scrollHeight / -3) ) + "px";
+			elem1.style.backgroundPositionY = (scrollHeight / -3) + "px";
 		} else {
 			elem1.style.backgroundPositionY = "0"; //edit or remove this
 		}

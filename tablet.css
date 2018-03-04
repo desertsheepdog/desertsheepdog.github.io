@@ -38,19 +38,6 @@ html {
 	}
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-	background-color: rgb(220, 220, 240);
-}
-
-::-webkit-scrollbar-thumb {
-	border-radius: 5px;
-	background-color: rgb(120, 120, 140);
-}
-
 body {
 	margin: 0 auto;
 	padding: 0;
@@ -68,10 +55,11 @@ header {
 	padding: 0;
 	height: 100vh;
 	width: 100%;
-	background-image: url("img/headerBackground.jpg");
-	background-attachment: fixed;
+	background-image: url("img/mHeader.jpg");
+	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-position: center top -1500px;
+	background-position: center top;
+	background-size: 100% auto;
 }
 
 .headerContent {
@@ -85,23 +73,19 @@ header {
 #logo {
 	display: block;
 	clear: both;
-	margin: 0;
 	padding: 0;
 	margin: auto;
-	padding: 0;
 	width: 100%;
-	height: 68vh;
+	height: 60vh;
 }
 
 #logo img {
 	display: block;
 	clear: both;
-    width: 60%;
+    width: 90%;
     height: auto;
 	margin: 0;
 	padding: 0;
-	display: block;
-	margin: auto;
 }
 
 header address {
@@ -110,10 +94,11 @@ header address {
 	padding: 0;
 	width: 100%;
 	height: 5vh;
+	font-size: .8em;
 	font-weight: bold;
 	text-align: center;
 	color: white;
-	text-shadow: 2px 2px 2px black
+	text-shadow: 1px 1px 1px black;
 }
 
 #downArrow {
@@ -125,27 +110,31 @@ header address {
 }
 
 #downArrow img {
-	width: 50px;
+	width: 40px;
 	height: auto;
 }
 
 #bookNow {
 	display: block;
 	float: right;
-	margin: 20px;
-	font-size: 3em;
+	margin: 10px;
+    padding: 5px 15px;
+	font-size: 1.5em;
 	font-weight: bold;
 	color: white;
 	text-shadow: 2px 2px 2px black;
+    background-color: rgb(131, 158, 179);
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px black
 }
 
 header a:visited {
-	color: white;
+	color: rgb(131, 158, 179);
 	text-decoration: none;
 }
 
 header a:link {
-	color: white;
+	color: rgb(131, 158, 179);
 	text-decoration: none;
 }
 
@@ -190,54 +179,50 @@ h3, h4 {
 	text-align: center;
 }
 
-}
-
 .infoPanel {
 	position: relative;
 	z-index: 1;
 	display: block;
 	min-height: 100vh;
-   background-color: white;
 }
 
 .panelHeader {
-    height: 10vh;
-	 padding: 0 0 0 0;
-    background-color: rgb(170, 170, 190);
+    display: table;
+	width: 100%;
+    min-height: 10vh;
+	 padding: 0;
+    background-color: rgb(131, 158, 179);
     color: white;
     box-shadow: 0px 2px 2px black;
-    
 }
 
 .panelHeader h1 {
+	display: block;
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	font-size: 4em;
+	font-size: 3em;
 	text-align: center;
-    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 2px 2px rgba(160, 200, 255, 0.5);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-color: rgb(20, 20, 40);
+    background-color: rgb(0, 10, 40);
     vertical-align: middle;
 }
 
 .panelBody {
-   height: 90vh;
-	padding: 0 2%;
+	display: table;
+   min-height: 90vh;
 }
 
 .panelContent {
     display: block;
 	float: left;
-    width: 50%;
-    height: 75vh;
+    width: 100%;
+    min-height: 75vh;
     margin: 2.5vh 0 0 0;
 	padding: 0;
-    background-color: rgb(250, 250, 255);
-    box-shadow: 2px 2px 2px black;
-	overflow-y: scroll;
 }
 
 .panelContent h2 {
@@ -249,57 +234,60 @@ h3, h4 {
 }
 
 #laserInfo {
-	background-image: url("img/laserBackground2.jpg");
-	background-position: right center;
-	background-attachment: fixed;
+	background-image: url("img/tLaser.jpg");
+	background-position: top;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 }
 
 #sunFXInfo {
-	background-image: url("img/sunfxBackground2.jpg");
-	background-position: right center;
-	background-attachment: fixed;
+	background-image: url("img/tSunFX.jpg");
+	background-position: top;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 }
 
 #massageInfo {
-	background-image: url("img/massageBackground2.jpg");
-	background-position: right center;
-	background-attachment: fixed;
+	background-image: url("img/tMassage.jpg");
+	background-position: top;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: 100%;
-}
-
-#contactUs {
-	background-image: url("img/headerBackground.jpg");
-	background-position: center bottom;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 }
 
 .panelNav {
-    display: block;
+   display: block;
 	position: relative;
 	float: left;
 	clear: both;
 	z-index: 2;
-   width: 50%;
-	height: 5vh;
-   text-align: center;
+    width: 100%;
+	min-height: 5vh;
+    text-align: center;
 	margin: 0 0 0 0;
-   padding: 1vh 0 0 0;
-	background-color: rgb(220, 220, 240);
-   box-shadow: 2px 2px 2px black;
+    padding: 0;
+}
+
+.panelNav p {
+	display: inline-block;
+	font-weight: bolder;
 }
 
 .panelNav li {
     display: inline-block;
 	width: 32%;
     color: white;
-	
+}
+
+.panelNav img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.infoPanel {
+	min-height: 100vh;
 }
 
 .infoPanel a {
@@ -350,6 +338,18 @@ h3, h4 {
     margin: 0;
 }
 
+#background2 {
+	position: fixed;
+	z-index: -2;
+}
+
+#servicesA {
+	display: block;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
 .services {
 	display: inline-block;
 	float: left;
@@ -386,8 +386,14 @@ h3, h4 {
 
 #contactUs {
 	min-height: 95vh;
-	margin: 0;
-	padding: 0;
+}
+
+#contactPanel {
+    min-height: 85vh;
+}
+
+form {
+	margin: 10px;
 }
 
 input {
@@ -401,8 +407,10 @@ textarea {
     display: block;
     clear: both;
     float: left;
-    width: 300px;
-    height: 300px;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 label {
@@ -416,11 +424,16 @@ label {
 }
 
 footer {
+	display: block;
+	position: absolute;
+	margin: auto;
+	bottom: 0;
 	height: 5vh;
 	padding: 5px 10px;
 	text-align: center;
 }
 
-footer p {
-	margin: 0;
+footer * {
+	display: inline-block;
+	margin: 0 20px 0 0;
 }
