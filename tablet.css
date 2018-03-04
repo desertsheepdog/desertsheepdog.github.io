@@ -419,7 +419,13 @@ label {
     float: left;
 }
 
+.g-recaptcha {
+    display: block;
+    clear: both;
+}
+
 .button {
+    clear: both;
 	width: 100px;
 }
 

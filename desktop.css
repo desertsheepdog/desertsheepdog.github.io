@@ -432,6 +432,11 @@ label {
     float: left;
 }
 
+.g-recaptcha {
+    display: block;
+    clear: both;
+}
+
 .button {
 	width: 100px;
 }
