@@ -162,7 +162,7 @@
 				<A NAME="goTo"></A>
 				Contact us by phone <a href="tel:6026190669">(602) 619 - 0669</a> or
                 <p>*Fields are required</p>
-				<form action="formProcessor.php" method="POST" enctype="text/plain">
+				<form action="mailto:dgoodyke87@gmail.com" method="POST" enctype="text/plain" target="_blank">
             	<label>Name:*</label>
             	<input type="text" name="name" required="required" />
             	<label>Email:*</label>
@@ -172,17 +172,6 @@
                 <div class="g-recaptcha" data-sitekey="6LcGdUoUAAAAAPnddgc_I7aAk5ZYoWJyaA72WlSH"></div>
             	<input class="button" type="submit" name="submit" value="Submit">
             	<input class="button" type="reset" value="Reset">
-                    <?php 
-                        if(isset($success) && $success) {
-                            <h1>Thank you!</h1>
-                            Your message has been sent!
-                            <?php
-                        } else {
-                            <h1>Sorry!</h1>
-                            an error has occured!
-                        <?php 
-                        } 
-                    ?>
         		</form>
                 </div>
             <footer>
