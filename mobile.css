@@ -431,7 +431,7 @@ label {
 
 footer {
 	display: block;
-	
+	clear: both;
 	margin: auto;
 	
 	height: 5vh;
